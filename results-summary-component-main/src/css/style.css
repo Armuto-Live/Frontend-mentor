@@ -1,0 +1,211 @@
+/*
+    - Mobile: 375px
+    - Desktop: 1440px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --light-red: hsl(0, 100%, 67%);
+  --orange-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  /* Gradients */
+  --light-state-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  --font-paragraphs: 18px;
+  --font-family: "Hanken Grotesk", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.blue,
+.white {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.blue {
+  height: 45vh;
+  background: linear-gradient(
+    to bottom,
+    var(--light-state-blue) 10%,
+    var(--light-royal-blue) 100%
+  );
+  color: var(--white);
+  border-radius: 0 0 2rem 2rem;
+  padding: 1rem 0;
+}
+.title {
+  font-size: var(--font-paragraphs);
+  color: var(--light-lavender);
+  font-weight: 700;
+}
+.result-circle {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--violet-blue),
+    var(--persian-blue)
+  );
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.result-circle p {
+  position: absolute;
+  font-weight: 700;
+  font-size: 4rem;
+  width: 100%;
+  top: 15%;
+}
+.result-circle div {
+  position: absolute;
+  width: 100%;
+  bottom: 15%;
+  font-size: 14px;
+  color: var(--light-lavender);
+}
+.result-content {
+  text-align: center;
+  padding-bottom: 1rem;
+  width: 70%;
+}
+.result-content p:nth-child(1) {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.result-content p:nth-last-child(1) {
+  color: var(--light-lavender);
+}
+.white {
+  background-color: var(--white);
+  height: calc(100vh - 45vh);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.white .title{
+    color: var(--dark-gray-blue);
+    font-weight: 800;
+}
+.white article{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: .4rem 0;
+  border-radius: 10px;
+}
+.white article figure{
+  display: flex;
+  gap: 1rem;
+}
+
+.white article p{
+  color: var(--dark-gray-blue);
+  font-weight: 800;
+}
+.white p span{
+  color: #BFB9BD;
+}
+.reaction{
+  color: var(--light-red);
+  background-color: hsla(0, 100%, 67%, .1);
+}
+.memory{
+  color: var(--orange-yellow);
+  background-color: hsla(39,100%,56%, .1);
+}
+.verbal{
+  color: var(--green-teal);
+  background-color: hsla(166,100%,37%, .1);
+}
+.visual{
+  color: var(--cobalt-blue);
+  background-color: hsla(234,85%,45%, .1);
+}
+.button-continue{
+  width: 100%;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  margin-top: 1rem;
+  height: 3rem;
+  font-size: var(--font-paragraphs);
+  border-radius: 3rem;
+}
+.button-continue:hover{
+  cursor: pointer;
+}
+@media (min-width: 460px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 55vh;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 12px var(--light-lavender);
+    max-width: min-content;
+  }
+  .blue,
+  .white {
+    padding: 3rem 1rem;
+    height: 100%;
+    max-width: 300px;
+  }
+  .blue {
+    background-color: var(--light-royal-blue);
+    border-radius: 2rem;
+  }
+  .white {
+    border-radius: 0 2rem 2rem 0;
+    justify-content: space-between;
+  }
+  .result-content {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width:767px) {
+  .blue,
+  .white {
+    padding: 3rem 2rem;
+  }
+}
